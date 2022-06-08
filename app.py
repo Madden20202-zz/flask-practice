@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 @app.route('/<int:number>')
 
-def welcome():
-    return "Hello World!"
+def incrimenter(number):
+    return "We are at " + str(number+1)
 
 if __name__ == '__main__':
     # Runs the Flask app
