@@ -10,9 +10,14 @@ app = Flask(__name__)
 # and called when the url is input
 @app.route('/<int:number>')
 
+# number is a variable made above and passed down
 def incrimenter(number):
     # this will take the number in the URL and add 1
     return "We are at " + str(number+1)
+
+@app.route('/<string:name>')
+def hello_user(name):
+    return "Hello " + name
 
 if __name__ == '__main__':
     # Runs the Flask app
