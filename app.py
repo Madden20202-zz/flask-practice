@@ -1,24 +1,24 @@
 from flask import Flask
 
-# Let's make a hello world app
+# Let's make a more complex app 
+# Increment counting app with a name app within it
 
-# Creates an instance of the class
 app = Flask(__name__)
 
-# route allows the app to know what 
-# URL triggers the functions that 
-# are defined
+# the route now becomes http://localhost:5000/<number here>
+# now multiple functions can be defined 
+# and called when the url is input
+@app.route('/<int:number>')
 
-# methods specifies what HTTP methods are allowed
-# the default value is ['GET']
-@app.route('/', methods=['GET', 'POST'])
+# number is a variable made above and passed down
+def incrimenter(number):
+    # this will take the number in the URL and add 1
+    return "We are at " + str(number+1)
 
-def welcome():
-    return "Hello World!"
+@app.route('/<string:name>')
+def hello_user(name):
+    return "Hello " + name
 
-# This is a special variable in Python where
-# the value of a script name is taken and 
-# ensures that the app is only ran on the main file
 if __name__ == '__main__':
     # Runs the Flask app
 
