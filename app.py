@@ -14,6 +14,10 @@ app = Flask(__name__)
 def before():
     print("This could be code executed before each request!")
 
+@app.route('/home/')
+def greeting():
+    return "Hello, Welcome to the tutorial!"
+
 if __name__ == '__main__':
     # Runs the Flask app
 
