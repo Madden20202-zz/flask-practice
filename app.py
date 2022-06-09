@@ -5,17 +5,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-# the route now becomes http://localhost:5000/<number here>
-# now multiple functions can be defined 
-# and called when the url is input
-@app.route('/<int:number>')
-
-# number is a variable made above and passed down
-def incrimenter(number):
-    # this will take the number in the URL and add 1
-    return "We are at " + str(number+1)
-
-@app.route('/<string:name>')
+@app.route('/')
 def hello_user(name):
     return "Hello " + name
 
