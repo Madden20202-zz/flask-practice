@@ -24,6 +24,10 @@ def hello_user():
 
 @app.route('/numbers')
 def print_numbers():
+    # this will print the numbers 1 to 4 and if 
+    # the info would be sent to another app,
+    # the information would be prepacked and 
+    # ready for display
     return jsonify(list(range(5)))
 
 if __name__ == '__main__':
