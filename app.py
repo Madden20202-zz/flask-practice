@@ -1,7 +1,11 @@
 from flask import Flask
 
-# Let's make a more complex app 
-# Increment counting app with a name app within it
+# Now these last ones were incredibly basic building blocks
+# lets add functionality and the ability to communicate
+# most information is sent as a JSON output which 
+# then can be used in multiple ways, usually to wrap 
+# needed information, learn more at
+# https://www.w3schools.com/js/js_json_intro.asp
 
 app = Flask(__name__)
 
