@@ -11,6 +11,10 @@ app = Flask(__name__)
 # lets have it perform something before the request is filfilled
 
 @app.before_request
+# Why use this?
+# This is exceptionally important to logging for the server
+# The code in this actually runs on the SERVER and this 
+# helps check for issues and fault points
 def before():
     print("This could be code executed before each request!")
 
