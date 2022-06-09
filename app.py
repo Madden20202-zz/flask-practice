@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 
 # Now these last ones were incredibly basic building blocks
 # lets add functionality and the ability to communicate
@@ -10,8 +11,9 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_user(name):
-    return "Hello " + name
+def hello_user():
+    return jsonify({'name': 'Austin',
+                    'role': 'Junior Dev'})
 
 if __name__ == '__main__':
     # Runs the Flask app
