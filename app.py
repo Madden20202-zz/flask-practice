@@ -22,6 +22,10 @@ def hello_user():
 # simultaniously, let's get data that 
 # is being counted then shown
 
+@app.route('/numbers')
+def print_numbers():
+    return jsonify(list(range(5)))
+
 if __name__ == '__main__':
     # Runs the Flask app
 
