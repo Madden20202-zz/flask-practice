@@ -11,9 +11,16 @@ from flask import jsonify
 app = Flask(__name__)
 
 @app.route('/')
+
+# this is a basic representation of pre-filled in 
+# data being shown. In a more complex example, 
+# the data would be taken from a table and then wrapped
 def hello_user():
     return jsonify({'name': 'Austin',
                     'role': 'Junior Dev'})
+
+# simultaniously, let's get data that 
+# is being counted then shown
 
 if __name__ == '__main__':
     # Runs the Flask app
