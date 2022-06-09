@@ -8,12 +8,14 @@ app = Flask(__name__)
 # When something has a / at the end, 
 # the app will read it as a sort of directory,
 # where it can be added to
+# ex /home/posts
 @app.route('/home/')
 
 def home_page():
     return "This is the Home Page"
 
-# So combining the two would be localhost:5000/home/contact
+# This will not be able to move forward,
+# and will be a single page app
 @app.route('/contact')
 
 def contact_page():
