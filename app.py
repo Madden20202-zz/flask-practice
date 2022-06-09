@@ -2,6 +2,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
+# Now apps will always redirect when something
+# is done, a login page is the best example of this
+
 @app.route('/home/')
 
 def home_page():
