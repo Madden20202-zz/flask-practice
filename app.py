@@ -1,4 +1,6 @@
 from flask import Flask
+# multiple imports from one file
+from contacts import contacts_bp, home_bp
 
 app = Flask(__name__)
 
