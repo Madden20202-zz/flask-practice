@@ -1,23 +1,34 @@
 from flask import Flask
+from flask import jsonify
 
-# Let's make a more complex app 
-# Increment counting app with a name app within it
+# Now these last ones were incredibly basic building blocks
+# lets add functionality and the ability to communicate
+# most information is sent as a JSON output which 
+# then can be used in multiple ways, usually to wrap 
+# needed information, learn more at
+# https://www.w3schools.com/js/js_json_intro.asp
 
 app = Flask(__name__)
 
-# the route now becomes http://localhost:5000/<number here>
-# now multiple functions can be defined 
-# and called when the url is input
-@app.route('/<int:number>')
+@app.route('/')
 
-# number is a variable made above and passed down
-def incrimenter(number):
-    # this will take the number in the URL and add 1
-    return "We are at " + str(number+1)
+# this is a basic representation of pre-filled in 
+# data being shown. In a more complex example, 
+# the data would be taken from a table and then wrapped
+def hello_user():
+    return jsonify({'name': 'Austin',
+                    'role': 'Junior Dev'})
 
-@app.route('/<string:name>')
-def hello_user(name):
-    return "Hello " + name
+# simultaniously, let's get data that 
+# is being counted then shown
+
+@app.route('/numbers')
+def print_numbers():
+    # this will print the numbers 1 to 4 and if 
+    # the info would be sent to another app,
+    # the information would be prepacked and 
+    # ready for display
+    return jsonify(list(range(5)))
 
 if __name__ == '__main__':
     # Runs the Flask app
