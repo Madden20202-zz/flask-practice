@@ -5,8 +5,8 @@ from flask import jsonify
 # sinply, they allow the dev to create
 # various endpoints into their own subdomains
 
-home_bp = Blueprint('home', __name__)
-contacts_bp = Blueprint('contacts', __name__)
+home_bp = Blueprint('/home', __name__)
+contacts_bp = Blueprint('/contacts', __name__)
 
 @home_bp.route('/home/')
 def greeting():
