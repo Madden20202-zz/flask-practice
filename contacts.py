@@ -6,6 +6,7 @@ from flask import jsonify
 # various endpoints into their own subdomains
 contacts_bp = Blueprint('contacts', __name__)
 
+# this is returning a 404 error
 @contacts_bp.route('/home/')
 def contact_list():
     # return "These are your Contacts:"
