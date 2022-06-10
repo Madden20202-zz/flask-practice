@@ -5,13 +5,11 @@ from flask import jsonify
 # sinply, they allow the dev to create
 # various endpoints into their own subdomains
 contacts_bp = Blueprint('contacts', __name__)
-
-# this is returning a 404 error
 @contacts_bp.route('/')
 def contact_list():
     return "These are your Contacts:"
 
-    # wont work but honestly dont care
+    # why would a double return not work
     return jsonify({
         "Austin": 876,
         "Jeremy": 309,
