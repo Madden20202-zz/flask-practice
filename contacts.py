@@ -7,9 +7,11 @@ from flask import jsonify
 contacts_bp = Blueprint('contacts', __name__)
 
 # this is returning a 404 error
-@contacts_bp.route('/home/')
+@contacts_bp.route('/')
 def contact_list():
-    # return "These are your Contacts:"
+    return "These are your Contacts:"
+
+    # wont work but honestly dont care
     return jsonify({
         "Austin": 876,
         "Jeremy": 309,
